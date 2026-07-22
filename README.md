@@ -2,19 +2,30 @@
 
 **Jigang Duan, Jiayi Wang, Heran Wang, Ping Yang, Genwei Ma, and Xing Zhao**  
 
+> **Repository status:** The code is currently being organized and will be released in this repository. This preliminary version provides an overview of LUCID and representative experimental results.
 
-> \*\*Repository status:\*\* The code is currently being organized and will be released in this repository. This preliminary version provides an overview of LUCID and representative experimental results.
+## Abstract
 
-## Overview
+Sparse-view CT reduces radiation dose and acquisition time by using fewer projection views, but angular undersampling makes reconstruction severely ill-posed, often resulting in streak artifacts, structural blurring, and loss of fine details. Existing regression-based methods commonly learn sampling-specific reconstruction mappings, whereas generative methods may produce hallucination-like structures inconsistent with the acquired projections under severe undersampling. We propose LUCID, a sparsity-controlled generative reconstruction framework based on deterministic Flow Matching. LUCID decouples sparsity-independent prior learning from sparsity-dependent inference: it learns a sampling-independent Flow Matching prior from high-quality CT images and uses the angular undersampling level to explicitly control the inference trajectory. Specifically, sampling sparsity determines a degradation-matched initial state and adaptively scales each Flow Matching update, which is followed by projection-domain data consistency using the acquired measurements. This alternating prior-consistency refinement enables a single pretrained generative prior to reconstruct images across different view numbers without view-specific retraining. Experiments across fixed and continuously varying sparse-view settings, including 20-120 views, demonstrate that LUCID consistently suppresses streak artifacts and projection-inconsistent hallucination-like structures while preserving anatomical fidelity.
+
+## Graphical Abstract
+
+<p align="center">
+  <img src="assets/graphical_abstract.png" alt="Graphical abstract of the LUCID framework" width="100%">
+</p>
+
+*Graphical abstract.* LUCID learns a sparsity-independent Flow Matching prior from high-quality CT images and performs sparsity-dependent inference through sparsity-guided initialization, adaptive Flow Matching updates, and projection-domain data consistency. This enables one pretrained prior to reconstruct CT images across continuously varying sparse-view settings while reducing streak artifacts and preserving anatomical structures.
+
+## Method Overview
 
 LUCID is a sparsity-controlled generative reconstruction framework for sparse-view computed tomography (CT) based on deterministic Flow Matching. It learns a sampling-independent generative prior from high-quality CT images and adapts the inference trajectory to the angular undersampling level of each measurement. Projection-domain data consistency is incorporated during inference to promote agreement with the acquired projections and suppress projection-inconsistent hallucination-like structures.
 
 ## Highlights
 
-* A single pretrained Flow Matching prior is used across different sparse-view settings without view-specific retraining.
-* Sampling sparsity controls both the initial state and the effective update strength during inference.
-* Projection-domain data consistency alternates with generative prior updates to improve anatomical fidelity.
-* The model generalizes across a broad range of projection-view numbers.
+- A single pretrained Flow Matching prior is used across different sparse-view settings without view-specific retraining.
+- Sampling sparsity controls both the initial state and the effective update strength during inference.
+- Projection-domain data consistency alternates with generative prior updates to improve anatomical fidelity.
+- The model generalizes across a broad range of projection-view numbers.
 
 ## Representative Results
 
@@ -53,4 +64,3 @@ Citation information will be added after the paper becomes publicly available.
 ## Contact
 
 For questions or updates, please open an issue in this repository.
-
