@@ -20,6 +20,12 @@ Sparse-view CT reduces radiation dose and acquisition time by using fewer projec
 
 LUCID is a sparsity-controlled generative reconstruction framework for sparse-view computed tomography (CT) based on deterministic Flow Matching. It learns a sampling-independent generative prior from high-quality CT images and adapts the inference trajectory to the angular undersampling level of each measurement. Projection-domain data consistency is incorporated during inference to promote agreement with the acquired projections and suppress projection-inconsistent hallucination-like structures.
 
+<p align="center">
+  <img src="assets/method_overview.png" alt="Training and inference workflow of the LUCID framework" width="100%">
+</p>
+
+*Method overview.* During training, the Flow Matching prior is learned from densely sampled high-quality CT images. During inference, the sampling sparsity level controls both the noise-FBP initialization and the effective update strength. Flow Matching prior updates then alternate with projection-domain data-consistency steps to progressively recover an anatomically faithful reconstruction.
+
 ## Highlights
 
 - A single pretrained Flow Matching prior is used across different sparse-view settings without view-specific retraining.
