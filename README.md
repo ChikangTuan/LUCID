@@ -23,7 +23,7 @@ LUCID is a sparsity-controlled generative reconstruction framework for sparse-vi
 The reconstructed images and corresponding error maps under 40, 60, and 80 projection views are compared with representative model-based, learning-based, and generative reconstruction methods.
 
 <p align="center">
-  <img src="assets/visual\_comparison.png" alt="Visual comparison under 40, 60, and 80 projection views" width="100%">
+  <img src="assets/visual_comparison.png" alt="Visual comparison under 40, 60, and 80 projection views" width="100%">
 </p>
 
 ### Generalization across projection-view numbers
@@ -31,7 +31,7 @@ The reconstructed images and corresponding error maps under 40, 60, and 80 proje
 The same pretrained LUCID model remains effective across continuously varying sparse-view settings from 20 to 120 views.
 
 <p align="center">
-  <img src="assets/generalization\_across\_views.png" alt="PSNR and SSIM across 20 to 120 projection views" width="100%">
+  <img src="assets/generalization_across_views.png" alt="PSNR and SSIM across 20 to 120 projection views" width="100%">
 </p>
 
 ### Structural fidelity and hallucination-like structures
@@ -39,7 +39,7 @@ The same pretrained LUCID model remains effective across continuously varying sp
 ROI comparisons illustrate the preservation of lung parenchymal structures and bony boundaries, together with reduced hallucination-like local structures.
 
 <p align="center">
-  <img src="assets/hallucination\_analysis.png" alt="ROI-based structural fidelity and hallucination analysis" width="75%">
+  <img src="assets/hallucination_analysis.png" alt="ROI-based structural fidelity and hallucination analysis" width="75%">
 </p>
 
 ## Code
